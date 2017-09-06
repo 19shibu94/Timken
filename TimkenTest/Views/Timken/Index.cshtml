@@ -1,0 +1,69 @@
+﻿@model IEnumerable<TimkenTest.Models.TimkenModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.JobId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DesignationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JobDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DesignationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManagerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JobDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id}) |
+            @Html.ActionLink("Details", "Details", new { id=item.id  }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id  })
+        </td>
+    </tr>
+}
+
+</table>
